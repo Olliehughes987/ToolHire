@@ -29,7 +29,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ToolHireFrontend", "ToolHir
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolHireClasses", "ToolHireClasses\ToolHireClasses.csproj", "{11CB25B0-FF5F-4AB3-A3A6-ECF3453101E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolHireTests", "\\vfiler1.lec-admin.dmu.ac.uk\Home6\P2421386\Documents\TodaysWork\ToolHireTests\ToolHireTests.csproj", "{9E8275C6-8F17-411B-8811-E1EF1CF68642}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolHireTests", "ToolHireTests\ToolHireTests.csproj", "{9E8275C6-8F17-411B-8811-E1EF1CF68642}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
