@@ -13,17 +13,17 @@
         <br />
         <br />
         OrderID&nbsp;
-        <asp:TextBox ID="TextBox1" runat="server" style="margin-left: 16px" Width="132px"></asp:TextBox>
+        <asp:TextBox ID="TxtOrderID" runat="server" style="margin-left: 16px" Width="132px"></asp:TextBox>
         <br />
-        ClientID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="TextBox2" runat="server" Width="134px"></asp:TextBox>
+        ClientID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="TxtClientID" runat="server" Width="134px"></asp:TextBox>
         <br />
-        StaffID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="TextBox3" runat="server" Width="134px"></asp:TextBox>
+        StaffID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="TxtStaffID" runat="server" Width="134px"></asp:TextBox>
         <br />
         DateAdded
-        <asp:TextBox ID="TextBox4" runat="server" Width="134px"></asp:TextBox>
+        <asp:TextBox ID="TxtDateAdded" runat="server" Width="134px"></asp:TextBox>
         <br />
         TotalCost&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="TextBox5" runat="server" Width="134px"></asp:TextBox>
+        <asp:TextBox ID="TxtTotalCost" runat="server" Width="134px"></asp:TextBox>
         <br />
         <asp:CheckBox ID="Processed" runat="server" />
         <br />

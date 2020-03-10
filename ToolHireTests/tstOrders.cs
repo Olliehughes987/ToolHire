@@ -115,8 +115,33 @@ namespace ToolHireTests
             Assert.IsTrue(OK);
         }
 
+        public void TestStaffIDFound()
+        {
+            clsOrders AnOrder = new clsOrders();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 StaffID = 1;
+            Found = AnOrder.Find(StaffID);
+            if (AnOrder.StaffID != 1)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
 
-
+        public void TestTotalCostFound()
+        {
+            clsOrders AnOrder = new clsOrders();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 TotalCost = 15;
+            Found = AnOrder.Find(TotalCost);
+            if (AnOrder.TotalCost != 15)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
 
     }
 }
