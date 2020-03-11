@@ -96,27 +96,87 @@ namespace ToolHireTests
             Assert.AreEqual(AnTools.ToolId, TestData);
         }
 
-        [TestMethod]
-        public void AvailabilityOK()
-        {
-            //create an instance of the class we want to create
-            clsTools AnTools = new clsTools();
-            //create some test data to assign to the property
-            Boolean TestData = true;
-            //assign the data to the property
-            AnTools.ToolsNo = TestData;
-            //test to see that the two values are the same
-            Assert.AreEqual(AnTools.ToolsNo, TestData);
-        }
+      
 
+        [TestMethod]
         public void FindMethodOk()
         {
             clsTools AnTools = new clsTools();
             Boolean Found = false;
-            Int32 AddressNo = 1;
-            Found = AnTools.Find(AddressNo);
+            Int32 ToolId = 1;
+            Found = AnTools.Find(ToolId);
             Assert.IsTrue(Found);
 
+        }
+        [TestMethod]
+        public void TestToolIdFound()
+        {
+            clsTools AnTools = new clsTools();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 ToolId = 21;
+            Found = AnTools.Find(ToolId);
+            if (AnTools.ToolId != 21)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestDateAddedFound()
+        {
+            clsTools AnTools = new clsTools();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 ToolId = 21;
+            Found = AnTools.Find(ToolId);
+            if (AnTools.DateAdded != Convert.ToDateTime("16/09/2015"))
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestCostFound()
+        {
+            clsTools AnTools = new clsTools();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 ToolId = 21;
+            Found = AnTools.Find(ToolId);
+            if (AnTools.Cost != 21)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestToolNameFound()
+        {
+            clsTools AnTools = new clsTools();
+            Boolean Found = false;
+            Boolean OK = true;
+            int ToolId = 21;
+            Found = AnTools.Find(ToolId);
+            if (AnTools.ToolName != "Hammer")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestGradeFound()
+        {
+            clsTools AnTools = new clsTools();
+            Boolean Found = false;
+            Boolean OK = true;
+            int ToolId = 21;
+            Found = AnTools.Find(ToolId);
+            if (AnTools.ToolName != "Platinum")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
         }
 
 
