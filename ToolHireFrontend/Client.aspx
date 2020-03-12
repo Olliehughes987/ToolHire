@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default2.aspx.cs" Inherits="Default2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="client.aspx.cs" Inherits="client" %>
 
 <!DOCTYPE html>
 
@@ -6,14 +6,14 @@
 <head runat="server">
     <title></title>
 </head>
-<body style="height: 25px">
-    <form id="form1" runat="server">
+<body>
+     <form id="form1" runat="server">
         <div>
         </div>
         <p>
             &nbsp;</p>
         <p>
-&nbsp;</p>
+            &nbsp;</p>
 &nbsp;ClientId:<asp:TextBox ID="txtClientId" runat="server" style="margin-left: 72px; margin-right: 2px; margin-top: 0px"></asp:TextBox>
         <br />
         <br />
@@ -32,10 +32,10 @@
         <br />
         Active:<asp:CheckBox ID="txtActive" runat="server" />
         <br />
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="submit" />
         <br />
-        <asp:Button ID="btnOK" runat="server" Text="OK" Width="53px" OnClick="btnOK_Click" />
+        
 
-        <asp:Button ID="btnCancel" runat="server" style="margin-left: 10px" Text="Cancel" Width="57px" />
     </form>
 </body>
 </html>
