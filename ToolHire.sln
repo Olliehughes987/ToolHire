@@ -8,6 +8,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ToolHireFrontend", "ToolHireFrontend\", "{E39DA75C-9979-451A-88DF-1EB4758651AB}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		ProjectReferences = "{11cb25b0-ff5f-4ab3-a3a6-ecf3453101e2}|ToolHireClasses.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_1259"
 		Debug.AspNetCompiler.PhysicalPath = "ToolHireFrontend\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1259\"
