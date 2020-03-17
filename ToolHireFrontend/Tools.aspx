@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Tools.aspx.cs" Inherits="Default2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Tools.aspx.cs" Inherits="Tools" %>
 
 <!DOCTYPE html>
 
@@ -6,27 +6,25 @@
 <head runat="server">
     <title></title>
 </head>
-<body style="height: 357px">
-    <form id="form1" runat="server">
-        ToolName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="txtToolName" runat="server" style="margin-right: 0px; margin-top: 0px; margin-bottom: 0px"></asp:TextBox>
-        <br />
-        GradeOfTool&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:DropDownList ID="ddlGradeOfToolList" runat="server">
-            <asp:ListItem>Platinum</asp:ListItem>
-            <asp:ListItem>Deafult</asp:ListItem>
+<body>
+     <form id="form1" runat="server">
+        <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" style="z-index: 1; left: 47px; top: 200px; position: absolute" Text="OK" />
+        <asp:TextBox ID="txtToolName" runat="server" style="z-index: 1; left: 90px; top: 12px; position: absolute; margin-top: 17px;"></asp:TextBox>
+        <p>
+            ToolName</p>
+        <p>
+            GradeOfTool</p>
+        <p>
+            Replacement cost<asp:TextBox ID="txtCost" runat="server"></asp:TextBox>
+         </p>
+        <p>
+            DateManufactured</p>
+        <asp:TextBox ID="txtDateAdded" runat="server" style="z-index: 1; left: 139px; top: 149px; position: absolute"></asp:TextBox>
+        <asp:DropDownList ID="txtGrade" runat="server" style="z-index: 1; left: 117px; top: 72px; position: absolute" OnSelectedIndexChanged="ddlGrade_SelectedIndexChanged">
+            <asp:ListItem>Platinum </asp:ListItem>
+            <asp:ListItem>Default</asp:ListItem>
         </asp:DropDownList>
-        <br />
-        ReplacementsCost&nbsp;&nbsp;&nbsp; <asp:TextBox ID="ReplacemntCostBox" runat="server" style="margin-right: 0px; margin-top: 0px; margin-bottom: 0px"></asp:TextBox>
-        <br />
-        DateManufactured&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="DateManufacturedBox" runat="server" style="margin-right: 0px; margin-top: 0px; margin-bottom: 0px"></asp:TextBox>
-        <br />
-        <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="OkButton" runat="server" OnClick="btnOK_Click" Text="  OK  " />
-&nbsp;&nbsp;
-        <asp:Button ID="CancelButton" runat="server" Text="Cancel" />
+        <asp:Button ID="Button1" runat="server" style="z-index: 1; left: 152px; top: 201px; position: absolute" Text="Button" OnClick="Button1_Click" />
     </form>
 </body>
 </html>
