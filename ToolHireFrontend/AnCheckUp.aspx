@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            StaffId:<asp:TextBox ID="txtStaffId" runat="server" style="margin-left: 74px" Width="118px"></asp:TextBox>
+            StaffId:<asp:TextBox ID="txtStaffId" runat="server" style="margin-left: 74px" Width="118px" OnTextChanged="txtStaffId_TextChanged"></asp:TextBox>
             <br />
             OrderId:<asp:TextBox ID="txtOrderId" runat="server" style="margin-left: 65px"></asp:TextBox>
             <br />
