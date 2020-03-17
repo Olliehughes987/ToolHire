@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="client.aspx.cs" Inherits="client" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Client.aspx.cs" Inherits="Client" %>
 
 <!DOCTYPE html>
 
@@ -8,14 +8,8 @@
 </head>
 <body>
      <form id="form1" runat="server">
-        <div>
-        </div>
-        <p>
-            &nbsp;</p>
-        <p>
-            &nbsp;</p>
-        <br />
-        <br />
+      
+
         ClientName:<asp:TextBox ID="txtClientName" runat="server" style="margin-left: 52px"></asp:TextBox>
         <br />
         <br />

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using ToolHireClasses;
 
 
 public partial class client : System.Web.UI.Page
@@ -18,5 +19,7 @@ public partial class client : System.Web.UI.Page
         clsClient AnClient = new clsClient();
 
 
+
     }
+
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ToolHireTests
+namespace ToolHireClasses
 {
     public class clsClient
     {

@@ -5,32 +5,32 @@ VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolHireBackend", "ToolHireBackend\ToolHireBackend.csproj", "{083E0CD1-D531-453A-BB66-CBA4AC672B8F}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ToolHireFrontend", "ToolHireFrontend\", "{E39DA75C-9979-451A-88DF-1EB4758651AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolHireClasses", "ToolHireClasses\ToolHireClasses.csproj", "{11CB25B0-FF5F-4AB3-A3A6-ECF3453101E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolHireTests", "ToolHireTests\ToolHireTests.csproj", "{9E8275C6-8F17-411B-8811-E1EF1CF68642}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ToolHireFrontOffice", "ToolHireFrontOffice\", "{1F7B7E3A-9C5C-48AD-8A9F-37069F5E0DD0}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
 		ProjectReferences = "{11cb25b0-ff5f-4ab3-a3a6-ecf3453101e2}|ToolHireClasses.dll;"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_1259"
-		Debug.AspNetCompiler.PhysicalPath = "ToolHireFrontend\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1259\"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_51464"
+		Debug.AspNetCompiler.PhysicalPath = "ToolHireFrontOffice\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51464\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_1259"
-		Release.AspNetCompiler.PhysicalPath = "ToolHireFrontend\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1259\"
+		Release.AspNetCompiler.VirtualPath = "/localhost_51464"
+		Release.AspNetCompiler.PhysicalPath = "ToolHireFrontOffice\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51464\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "1259"
-		SlnRelativePath = "ToolHireFrontend\"
+		VWDPort = "51464"
+		SlnRelativePath = "ToolHireFrontOffice\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolHireClasses", "ToolHireClasses\ToolHireClasses.csproj", "{11CB25B0-FF5F-4AB3-A3A6-ECF3453101E2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolHireTests", "ToolHireTests\ToolHireTests.csproj", "{9E8275C6-8F17-411B-8811-E1EF1CF68642}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,10 +42,6 @@ Global
 		{083E0CD1-D531-453A-BB66-CBA4AC672B8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{083E0CD1-D531-453A-BB66-CBA4AC672B8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{083E0CD1-D531-453A-BB66-CBA4AC672B8F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E39DA75C-9979-451A-88DF-1EB4758651AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E39DA75C-9979-451A-88DF-1EB4758651AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E39DA75C-9979-451A-88DF-1EB4758651AB}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{E39DA75C-9979-451A-88DF-1EB4758651AB}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{11CB25B0-FF5F-4AB3-A3A6-ECF3453101E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{11CB25B0-FF5F-4AB3-A3A6-ECF3453101E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11CB25B0-FF5F-4AB3-A3A6-ECF3453101E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -54,6 +50,10 @@ Global
 		{9E8275C6-8F17-411B-8811-E1EF1CF68642}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E8275C6-8F17-411B-8811-E1EF1CF68642}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E8275C6-8F17-411B-8811-E1EF1CF68642}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F7B7E3A-9C5C-48AD-8A9F-37069F5E0DD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F7B7E3A-9C5C-48AD-8A9F-37069F5E0DD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F7B7E3A-9C5C-48AD-8A9F-37069F5E0DD0}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F7B7E3A-9C5C-48AD-8A9F-37069F5E0DD0}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -95,6 +95,16 @@ namespace ToolHireTests
             Assert.AreEqual(AnClient.Active, TestData);
         }
 
+        //[TestMethod]
+       // public void FindMethodOK()
+        //{
+            //Create an instance of the class we want to create
+            //clsClient AnClient = new clsClient();
+            //boolean variable to store the result of the validation
+            //Boolean Found = false;
+            //create some test data to use with the method
+            
+       // }
 
     }
 }
