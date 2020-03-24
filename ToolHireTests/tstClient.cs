@@ -49,7 +49,7 @@ namespace ToolHireTests
             //create an instance of the class we want to create
             clsClient AnClient = new clsClient();
             //create some test data to assign to the property
-            string TestData = "21b";
+            String TestData = "21b";
             //assign the data to the property
             AnClient.BillingInformation = TestData;
             //test to see that the two values are the same
@@ -62,7 +62,7 @@ namespace ToolHireTests
             //create an instance of the class we want to create
             clsClient AnClient = new clsClient();
             //create some test data to assign to the property
-            string TestData = "Michael";
+            String TestData = "Michael";
             //assign the data to the property
             AnClient.ClientName = TestData;
             //test to see that the two values are the same
@@ -75,7 +75,7 @@ namespace ToolHireTests
             //create an instance of the class we want to create
             clsClient AnClient = new clsClient();
             //create some test data to assign to the property
-            string TestData = "TierOne";
+            String TestData = "TierOne";
             //assign the data to the property
             AnClient.SubscriptionType = TestData;
             //test to see that the two values are the same

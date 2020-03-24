@@ -5,10 +5,10 @@ namespace ToolHireClasses
     public class clsClient
     {
         private bool mActive;
-        private int mClientId;
-        private string mBillingInformation;
-        private string mSubscriptionType;
-        private string mClientName;
+        private Int32 mClientId;
+        private String mBillingInformation;
+        private String mSubscriptionType;
+        private String mClientName;
         private DateTime mSignUpDate;
 
         public bool Active
@@ -22,7 +22,7 @@ namespace ToolHireClasses
                 mActive = value;
             }
          }
-        public int ClientId
+        public Int32 ClientId
         {
             get
             {
@@ -34,7 +34,7 @@ namespace ToolHireClasses
             }
         }
             
-        public string BillingInformation
+        public String BillingInformation
         {
             get
             {
@@ -46,7 +46,7 @@ namespace ToolHireClasses
             }
         }
 
-        public string SubscriptionType
+        public String SubscriptionType
         {
             get
             {
@@ -59,7 +59,7 @@ namespace ToolHireClasses
         }
 
         
-        public string ClientName
+        public String ClientName
         {
             get
             {
@@ -83,7 +83,7 @@ namespace ToolHireClasses
             }
         }
 
-        public bool Find(int ClientId)
+      /*  public bool Find(int ClientId)
         {
             ClientId = 1;
             ClientName = "Ollie Hughes";
@@ -93,7 +93,7 @@ namespace ToolHireClasses
             Active = true;
 
             return true;
-        }
+        }*/
 
     }
 }
