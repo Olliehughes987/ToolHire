@@ -19,7 +19,7 @@ namespace ToolHireClasses
             }
             set
             {
-                mToolId = Value;
+                mDateAdded = value;
             }
         }
         public bool Active
@@ -30,7 +30,7 @@ namespace ToolHireClasses
             }
             set
             {
-                mToolId = Value;
+                mActive = value;
             }
         }
         public int Cost
@@ -41,7 +41,7 @@ namespace ToolHireClasses
             }
             set
             {
-                mToolId = Value;
+                mCost = value;
             }
         }
         public string ToolName
@@ -52,7 +52,7 @@ namespace ToolHireClasses
             }
             set
             {
-                mToolId = Value;
+                mToolName = value;
             }
         }
         public string Grade
@@ -63,7 +63,7 @@ namespace ToolHireClasses
             }
             set
             {
-                mToolId = Value;
+                mGrade = value;
             }
         }
         public int ToolId {
@@ -73,18 +73,19 @@ namespace ToolHireClasses
             }
             set
             {
-                mToolId = Value;
+                mToolId = value;
             }
         }
 
-        public int Value { get; private set; }
 
         public bool Find(int addressNo)
         {
             mToolId = 21;
             mCost = 21;
             mToolName = "Hammer";
-
+            mDateAdded = Convert.ToDateTime("16/9/2015");
+            mActive = true;
+            mGrade= "Platinum";
             return true;
         }
 

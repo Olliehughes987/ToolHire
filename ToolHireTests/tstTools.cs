@@ -19,12 +19,25 @@ namespace ToolHireTests
         {
             //create an instance of the class we want to create
             clsTools AnTools = new clsTools();
-            //create some test data to assign to the property
+            //create some t est data to assign to the tool
             DateTime TestData = DateTime.Now.Date;
-            //assign the data to the property
+            //assign the data to the tool
             AnTools.DateAdded = TestData;
             //test to see that the two values are the same
             Assert.AreEqual(AnTools.DateAdded, TestData);
+        }
+
+        [TestMethod]
+        public void AvailabilityOK()
+        {
+            //create an instance of the class we want to create
+            clsTools AnTools = new clsTools();
+            //create some test data to assign to the tool
+            Boolean TestData = true;
+            //assign the data to the tool
+            AnTools.Active= TestData;
+            //test to see that the two values are the same
+            Assert.AreEqual(AnTools.Active, TestData);
         }
 
 
@@ -33,9 +46,9 @@ namespace ToolHireTests
         {
             //create an instance of the class we want to create
             clsTools AnTools = new clsTools();
-            //create some test data to assign to the property
+            //create some test data to assign to the tool
             Int32 TestData = 1;
-            //assign the data to the property
+            //assign the data to the tool
             AnTools.Cost = TestData;
             //test to see that the two values are the same
             Assert.AreEqual(AnTools.Cost, TestData);
@@ -47,9 +60,9 @@ namespace ToolHireTests
         {
             //create an instance of the class we want to create
             clsTools AnTools = new clsTools();
-            //create some test data to assign to the property
-            string TestData = "21b";
-            //assign the data to the property
+            //create some test data to assign to the tool
+            string TestData = "hammer";
+            //assign the data to the tool
             AnTools.ToolName = TestData;
             //test to see that the two values are the same
             Assert.AreEqual(AnTools.ToolName, TestData);
@@ -60,9 +73,9 @@ namespace ToolHireTests
         {
             //create an instance of the class we want to create
             clsTools AnTools = new clsTools();
-            //create some test data to assign to the property
-            string TestData = "LE1 4AB";
-            //assign the data to the property
+            //create some test data to assign to the tool
+            string TestData = "platinum";
+            //assign the data to the tool
             AnTools.Grade = TestData;
             //test to see that the two values are the same
             Assert.AreEqual(AnTools.Grade, TestData);
@@ -73,9 +86,9 @@ namespace ToolHireTests
         {
             //create an instance of the class we want to create
             clsTools AnTools = new clsTools();
-            //create some test data to assign to the property
+            //create some test data to assign to the tool
             Int32 TestData = 1;
-            //assign the data to the property
+            //assign the data to the tool
             AnTools.ToolId = TestData;
             //test to see that the two values are the same
             Assert.AreEqual(AnTools.ToolId, TestData);
@@ -157,13 +170,28 @@ namespace ToolHireTests
             Boolean OK = true;
             int ToolId = 21;
             Found = AnTools.Find(ToolId);
-            if (AnTools.ToolName != "Platinum")
+            if (AnTools.Grade != "Platinum")
             {
                 OK = false;
             }
             Assert.IsTrue(OK);
         }
 
+        [TestMethod]
+        public void TestActiveFound()
+        {
+            clsTools Antool = new clsTools();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 ToolId = 21;
+            Found = Antool.Find(ToolId);
+            if (Antool.Active != true)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+
+        }
 
     }
 }
