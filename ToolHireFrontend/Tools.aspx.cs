@@ -7,28 +7,22 @@ using System.Web.UI.WebControls;
 using ToolHireClasses;
 
 public partial class Tools : System.Web.UI.Page
-{
-    protected void Page_Load(object sender, EventArgs e)
-    {
-
-    }
-
-    protected void btnOK_Click(object sender, EventArgs e)
+{ 
+    
+    protected void btnFind_Click(object sender, EventArgs e)
     {
         clsTools AnTools = new clsTools();
-        AnTools.ToolName = txtToolName.Text;
-        AnTools.Grade = txtGrade.Text;
-        AnTools.Cost = Convert.ToInt32(txtCost.Text);
-        AnTools.DateAdded = Convert.ToDateTime(txtDateAdded.Text);
-        Session["AnTools"] = AnTools;
-        Response.Redirect("ToolViewer.aspx");
-
+        Int32 ToolId;
+        Boolean Found = false;
+        ToolId = Convert.ToInt32(txtToolId.Text);
+        Found = AnTools.Find(ToolId);
+        if (Found == true)
+        {
+            txtToolName.Text = AnTools.ToolName;
+            txtGrade.Text = AnTools.Grade;
+            txtCost.Text  = AnTools.Cost.ToString();
+            txtDateAdded.Text = AnTools.DateAdded.ToString();
+                
+        }
     }
-
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-
-    }
-
-  
 }

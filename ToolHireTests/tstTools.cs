@@ -101,7 +101,7 @@ namespace ToolHireTests
         {
             clsTools AnTools = new clsTools();
             Boolean Found = false;
-            Int32 ToolId = 1;
+            Int32 ToolId = 21;
             Found = AnTools.Find(ToolId);
             Assert.IsTrue(Found);
 
