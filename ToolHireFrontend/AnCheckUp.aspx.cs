@@ -42,4 +42,10 @@ public partial class AnCheckUp : System.Web.UI.Page
     {
 
     }
+
+
+
+
+
+  
 }

@@ -4,16 +4,28 @@ namespace ToolHireClasses
 {
     public class clsCheckUp
     {
-        public string comments;
+        private string mComments;
         private int mStaffId;
         private DateTime mDateAdded;
         private int mCheckUpId;
         private int mOrderId;
         private int mCheckUpNo;
+        private bool mToolReturn;
 
 
-        public bool ToolReturn { get; set; }
-        public DateTime DateAdded 
+
+        public bool ToolReturn
+        {
+            get
+            {
+                return mToolReturn;
+            }
+            set
+            {
+                mToolReturn = value;
+            }
+        }
+        public DateTime DateAdded
         {
             get
             {
@@ -46,7 +58,7 @@ namespace ToolHireClasses
                 mOrderId = value;
             }
         }
- 
+
         public int CheckUpId
         {
             get
@@ -62,22 +74,51 @@ namespace ToolHireClasses
         {
             get
             {
-                return comments;
+                return mComments;
             }
             set
             {
-                comments = value;
+                mComments = value;
+            }
+        }
+        public int StaffId
+        {
+            get
+            {
+                return mStaffId;
+            }
+            set
+            {
+                mStaffId = value;
             }
         }
 
-        public bool Find(int StaffId)
+        public bool Find(int CheckUpId)
         {
-            mStaffId = 12;
-            mDateAdded = Convert.ToDateTime("16/9/2015");
-            return true;
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@CheckUpId", CheckUpId);
+            DB.Execute("sproc_tblCheckUpId_FilterByCheckUpId");
+            if (DB.Count == 1)
+            {
+
+                mStaffId = Convert.ToInt32(DB.DataTable.Rows[0]["StaffId"]);
+                mOrderId = Convert.ToInt32(DB.DataTable.Rows[0]["OrderId"]); ;
+                mCheckUpNo = Convert.ToInt32(DB.DataTable.Rows[0]["CheckUpNo"]);
+                mCheckUpId = Convert.ToInt32(DB.DataTable.Rows[0]["CheckUpId"]); ;
+                mDateAdded = Convert.ToDateTime(DB.DataTable.Rows[0]["DateOfCheckup"]);
+                mComments = Convert.ToString(DB.DataTable.Rows[0]["Comments"]); ;
+                mToolReturn = Convert.ToBoolean(DB.DataTable.Rows[0]["ToolReturn"]);
+
+
+
+                return true;
+            }
+
+            else
+
+                return false;
         }
+}
+
 
     }
-
-
-}

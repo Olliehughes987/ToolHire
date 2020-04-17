@@ -91,9 +91,9 @@ namespace ToolHireTests
                 clsCheckUp AnCheckUp = new clsCheckUp();
                 string TestData = "21b";
                 //assign the data to the property
-                AnCheckUp.comments = TestData;
+                AnCheckUp.Comments = TestData;
                 //test to see that the two values are the same
-                Assert.AreEqual(AnCheckUp.comments, TestData);
+                Assert.AreEqual(AnCheckUp.Comments, TestData);
             }
 
             [TestMethod]
@@ -104,8 +104,8 @@ namespace ToolHireTests
                 
                 Boolean Found = false;
                 
-                Int32 StaffId = 1;
-                Found = AnCheckUp.Find(StaffId);
+                Int32 CheckUpId = 12;
+                Found = AnCheckUp.Find(CheckUpId);
                 
                 Assert.IsTrue(Found);
             }
@@ -117,8 +117,8 @@ namespace ToolHireTests
                 clsCheckUp AnCheckUp = new clsCheckUp();
                 Boolean Found = false;
                 Boolean OK = true;
-                Int32 StaffId = 12;
-                Found = AnCheckUp.Find(StaffId);
+                Int32 CheckUpId = 12;
+                Found = AnCheckUp.Find(CheckUpId);
                 //test to see that the two values are the same
                if (AnCheckUp.StaffId != 12)
                 {
@@ -136,10 +136,10 @@ namespace ToolHireTests
                 Boolean Found = false;
                 //assign the data to the property
                 Boolean OK = true;
-                Int32 StaffId = 12;
-                Found = AnCheckUp.Find(StaffId);
+                Int32 CheckUpId = 12;
+                Found = AnCheckUp.Find(CheckUpId);
                 //test to see that the two values are the same
-                if (AnCheckUp.StaffId != 12)
+                if (AnCheckUp.CheckUpId != 12)
                 {
                     OK = false;
                 }
@@ -155,10 +155,10 @@ namespace ToolHireTests
                 Boolean Found = false;
                 //assign the data to the property
                 Boolean OK = true;
-                Int32 StaffId = 12;
-                Found = AnCheckUp.Find(StaffId);
+                Int32 CheckUpId = 12;
+                Found = AnCheckUp.Find(CheckUpId);
                 //test to see that the two values are the same
-                if (AnCheckUp.StaffId != 12)
+                if (AnCheckUp.OrderId != 12)
                 {
                     OK = false;
                 }
@@ -175,10 +175,10 @@ namespace ToolHireTests
                 Boolean Found = false;
                 //assign the data to the property
                 Boolean OK = true;
-                Int32 StaffId = 12;
-                Found = AnCheckUp.Find(StaffId);
+                Int32 CheckUpId = 12;
+                Found = AnCheckUp.Find(CheckUpId);
                 //test to see that the two values are the same
-                if (AnCheckUp.StaffId != 12)
+                if (AnCheckUp.CheckUpNo != 12)
                 {
                     OK = false;
                 }
@@ -194,10 +194,10 @@ namespace ToolHireTests
                 Boolean Found = false;
                 //assign the data to the property
                 Boolean OK = true;
-                Int32 StaffId = 12;
-                Found = AnCheckUp.Find(StaffId);
+                int CheckUpId = 12;
+                Found = AnCheckUp.Find(CheckUpId);
                 //test to see that the two values are the same
-                if (AnCheckUp.StaffId != 12)
+                if (AnCheckUp.Comments != "ABC")
                 {
                     OK = false;
                 }
@@ -213,10 +213,10 @@ namespace ToolHireTests
                 Boolean Found = false;
                 //assign the data to the property
                 Boolean OK = true;
-                Int32 StaffId = 12;
-                Found = AnCheckUp.Find(StaffId);
+                Int32 CheckUpId = 12;
+                Found = AnCheckUp.Find(CheckUpId);
                 //test to see that the two values are the same
-                if (AnCheckUp.StaffId != 12)
+                if (AnCheckUp.ToolReturn != true)
                 {
                     OK = false;
                 }
@@ -233,10 +233,10 @@ namespace ToolHireTests
             Boolean Found = false;
             //assign the data to the property
             Boolean OK = true;
-            Int32 StaffId = 12;
-            Found = AnCheckUp.Find(StaffId);
+            Int32 CheckUpId = 12;
+            Found = AnCheckUp.Find(CheckUpId);
             //test to see that the two values are the same
-            if (AnCheckUp.StaffId != 12)
+            if (AnCheckUp.DateAdded != Convert.ToDateTime("16/09/2015"))
             {
                 OK = false;
             }
