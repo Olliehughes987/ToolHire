@@ -16,6 +16,7 @@ public partial class AnCheckUp : System.Web.UI.Page
     protected void Btnsubmit_Click(object sender, EventArgs e)
     {
         clsCheckUp AnCheckUp = new clsCheckUp();
+        AnCheckUp.CheckUpId = Convert.ToInt32(txtCheckUpId.Text);
         AnCheckUp.StaffId = Convert.ToInt32(txtStaffId.Text);
         AnCheckUp.OrderId = Convert.ToInt32(txtStaffId.Text);
         AnCheckUp.CheckUpNo = Convert.ToInt32(txtStaffId.Text);
@@ -47,5 +48,28 @@ public partial class AnCheckUp : System.Web.UI.Page
 
 
 
-  
+
+
+
+
+    protected void BtnFind_Click(object sender, EventArgs e)
+    {
+        clsCheckUp AnCheckUp = new clsCheckUp();
+        Int32 CheckUpId;
+        Boolean Found = false;
+        CheckUpId = Convert.ToInt32(txtCheckUpId.Text);
+        Found = AnCheckUp.Find(CheckUpId);
+        if (Found == true)
+        {
+            txtCheckUpNo.Text = AnCheckUp.CheckUpNo.ToString();
+            txtComments.Text = AnCheckUp.Comments;
+            txtDateAdded.Text = AnCheckUp.DateAdded.ToString();
+            txtOrderId.Text = AnCheckUp.OrderId.ToString();
+            txtStaffId.Text = AnCheckUp.StaffId.ToString();
+            txtToolReturn.Text = AnCheckUp.ToolReturn.ToString();
+
+        }
+
+
+    }
 }
