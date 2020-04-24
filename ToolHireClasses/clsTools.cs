@@ -101,7 +101,56 @@ namespace ToolHireClasses
                 return false;
             }
         }
-        
 
+        public string Valid(string ToolName, string Cost, string Grade, string DateAdded)
+        {
+            string Error = "";
+            DateTime DateTemp;
+            if (ToolName.Length == 0)
+            {
+                Error = Error + "The tool name may not be blank";
+            }
+            if (ToolName.Length > 20)
+            {
+                Error = Error + "The ToolName must be less the 20 Characters";
+            }
+            try
+            {
+                DateTemp = Convert.ToDateTime(DateAdded);
+                if (DateTemp < DateTime.Now.Date)
+                {
+                    //record the error
+                    Error = Error + "The date cannot be in the past : ";
+                }
+                //check to see if the date is greater than today's date
+                if (DateTemp > DateTime.Now.Date)
+                {
+                    //record the error
+                    Error = Error + "The date can not be in the future";
+                }
+            }
+            catch
+            {
+                Error = Error + "The date was not a valid date : ";
+            }
+            if (Grade.Length == 0)
+            {
+                Error = Error + "The Grade name may not be blank";
+            }
+            if (Grade.Length > 20)
+            {
+                Error = Error + "The Grade must be less the 20 Characters";
+            }
+
+            if (Cost.Length == 0)
+            {
+                Error = Error + "The Grade name may not be blank";
+            }
+            if (Cost.Length > 10  )
+            {
+                Error = Error + "The Grade must be less the 20 Characters";
+            }
+            return Error;
+        }
     }
 }
