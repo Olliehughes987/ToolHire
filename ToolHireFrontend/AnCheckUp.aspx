@@ -19,14 +19,12 @@
             <br />
             No.OfCheckUps:<asp:TextBox ID="txtCheckUpNo" runat="server" style="margin-left: 10px" Width="357px"></asp:TextBox>
             <br />
-            ToolsReturned:<asp:DropDownList ID="txtToolReturn" runat="server" style="margin-left: 45px" OnSelectedIndexChanged="txtToolReturn_SelectedIndexChanged" Width="122px">
-                <asp:ListItem Selected="True">Yes</asp:ListItem>
-                <asp:ListItem Enabled="False">No</asp:ListItem>
-            </asp:DropDownList>
-            <br />
             Comments:<asp:TextBox ID="txtComments" runat="server" style="margin-left: 102px" Width="365px"></asp:TextBox>
             <br />
             Date<asp:TextBox ID="txtDateAdded" runat="server" style="margin-left: 196px" Width="369px"></asp:TextBox>
+            <br />
+            <br />
+            <asp:CheckBox ID="txtToolReturn" runat="server" Text="Tool Return?" />
             <br />
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

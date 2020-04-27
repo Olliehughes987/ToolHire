@@ -7,6 +7,14 @@ namespace ToolHireTests
     [TestClass]
     public class tstCheckUp
     {
+
+        string OrderId = "12";
+        string StaffId = "12";
+        string CheckUpNo = "12";
+        string Comments = "ABC";
+        string DateAdded = DateTime.Now.Date.ToString();
+
+
             [TestMethod]
             public void InstanceOK()
             {
@@ -242,6 +250,15 @@ namespace ToolHireTests
             }
             Assert.IsTrue(OK);
         }
+
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreEqual(Error, "");
+         }
 
 
 

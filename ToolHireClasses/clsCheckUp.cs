@@ -93,6 +93,15 @@ namespace ToolHireClasses
             }
         }
 
+        public string Valid(string OrderId,
+                            string StaffId,
+                            string CheckUpNo,
+                            string Comments,
+                            string DateAdded)
+        {
+            return "";
+        }
+
         public bool Find(int CheckUpId)
         {
             clsDataConnection DB = new clsDataConnection();
