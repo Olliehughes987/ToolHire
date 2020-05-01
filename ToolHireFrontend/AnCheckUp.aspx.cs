@@ -16,15 +16,31 @@ public partial class AnCheckUp : System.Web.UI.Page
     protected void Btnsubmit_Click(object sender, EventArgs e)
     {
         clsCheckUp AnCheckUp = new clsCheckUp();
-        AnCheckUp.CheckUpId = Convert.ToInt32(txtCheckUpId.Text);
-        AnCheckUp.StaffId = Convert.ToInt32(txtStaffId.Text);
-        AnCheckUp.OrderId = Convert.ToInt32(txtStaffId.Text);
-        AnCheckUp.CheckUpNo = Convert.ToInt32(txtStaffId.Text);
-        AnCheckUp.ToolReturn = Convert.ToBoolean(txtToolReturn.Text);
-        AnCheckUp.Comments = txtComments.Text;
-        AnCheckUp.DateAdded = Convert.ToDateTime(txtDateAdded.Text);
-        Session["AnCheckUp"] = AnCheckUp;
-        Response.Write("CheckUpViewer.aspx");
+        string CheckUpNo = txtCheckUpNo.Text;
+        string CheckUpId = txtCheckUpId.Text;
+        string StaffId = txtStaffId.Text;
+        string OrderId = txtOrderId.Text;
+        string ToolReturn = txtToolReturn.Text;
+        string Comments = txtComments.Text;
+        string DateAdded = txtDateAdded.Text;
+        string Error = "";
+        Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+        if (Error == "")
+        {
+            AnCheckUp.CheckUpId = Convert.ToInt32(txtCheckUpId.Text);
+            AnCheckUp.StaffId = Convert.ToInt32(txtStaffId.Text);
+            AnCheckUp.OrderId = Convert.ToInt32(txtStaffId.Text);
+            AnCheckUp.CheckUpNo = Convert.ToInt32(txtStaffId.Text);
+            AnCheckUp.ToolReturn = Convert.ToBoolean(txtToolReturn.Text);
+            AnCheckUp.Comments = txtComments.Text;
+            AnCheckUp.DateAdded = Convert.ToDateTime(txtDateAdded.Text);
+            Session["AnCheckUp"] = AnCheckUp;
+            Response.Write("CheckUpViewer.aspx");
+        }
+        else
+        {
+            lblError.Text = Error;
+        }
 
 
 }

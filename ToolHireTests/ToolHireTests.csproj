@@ -56,6 +56,7 @@
     <Compile Include="tstOrders.cs" />
     <Compile Include="tstStaff.cs" />
     <Compile Include="tstTools.cs" />
+    <Compile Include="tstCheckUpCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

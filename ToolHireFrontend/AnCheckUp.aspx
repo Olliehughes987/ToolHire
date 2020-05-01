@@ -27,6 +27,8 @@
             <asp:CheckBox ID="txtToolReturn" runat="server" Text="Tool Return?" />
             <br />
             <br />
+            <asp:Label ID="lblError" runat="server"></asp:Label>
+            <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="Btnsubmit" runat="server" Text="Submit" OnClick="Btnsubmit_Click" />   
             <asp:Button ID="Btncancel" runat="server" Text="Cancel" OnClick="Btncancel_Click" />   

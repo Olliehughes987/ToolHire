@@ -99,8 +99,69 @@ namespace ToolHireClasses
                             string Comments,
                             string DateAdded)
         {
-            return "";
+            String Error = "";
+            DateTime DateTemp;
+            if (CheckUpNo.Length == 0)
+            {
+                Error = Error + "The Comments cannot be blank: ";
+            }
+
+            if (CheckUpNo.Length > 6)
+            {
+                Error = Error + "The Check Up No must be less than 6 characters : ";
+            }
+
+            try
+            {
+
+                DateTemp = Convert.ToDateTime(DateAdded);
+                if (DateTemp < DateTime.Now.Date)
+                {
+                    Error = Error + "the date cannot be past : ";
+                }
+
+                if (DateTemp > DateTime.Now.Date)
+                {
+                    Error = Error + "The date cannot be future : ";
+
+                }
+            }
+
+            catch
+            {
+                Error = Error + "The Date was not a valid date : ";
+            }
+            if (OrderId.Length == 0)
+            {
+                Error = Error + "The Staff Id cant be blank : ";
+            }
+            if (OrderId.Length > 6)
+            {
+                Error = Error + "The Order Id must be less than 6 characters : ";
+            }
+
+            if (StaffId.Length == 0)
+            {
+                Error = Error + "Staff Id cant be blank : ";
+            }
+            if (StaffId.Length > 6 )
+            {
+                Error = Error + "The Staff Id must be less than 6 characters : ";
+            }
+            if (Comments.Length ==0)
+            {
+                Error = Error + "The Comments cant be blank : ";
+            }
+            if (Comments.Length > 50)
+            {
+                Error = Error + "Reached Comments Limit : "; 
+            }
+
+            return Error;
         }
+
+   
+
 
         public bool Find(int CheckUpId)
         {

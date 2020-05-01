@@ -260,6 +260,384 @@ namespace ToolHireTests
             Assert.AreEqual(Error, "");
          }
 
+        [TestMethod]
+        public void CheckUpNoMinLessOne()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string CheckUpNo = "";
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CheckUpNoMin()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string CheckUpNo = "a";
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CheckUpNoMinPlusOne()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string CheckUpNo = "aa";
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CheckUpNoMaxLessOne()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string CheckUpNo = "aaaaa";
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CheckUpNoMax()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string CheckUpNo = "aaaaaa";
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CheckUpNoMid()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string CheckUpNo = "aaa";
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CheckUpNoMaxPlusOne()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string CheckUpNo = "aaaaaaa";
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CheckUpNoExtremeMax()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string CheckUpNo = "";
+            CheckUpNo = CheckUpNo.PadRight(500, 'a');
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DateAddedExtremeMin()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            TestDate = TestDate.AddYears(-100);
+            string DateAdded = TestDate.ToString();
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DateAddedMinLessOne()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            TestDate = TestDate.AddYears(-1);
+            string DateAdded = TestDate.ToString();
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DateAddedMin()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            string DateAdded = TestDate.ToString();
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DateAddedMinPlusOne()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            TestDate = TestDate.AddYears(1);
+            string DateAdded = TestDate.ToString();
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DateAddedExtremeMax()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            DateTime TestDate;
+            TestDate = DateTime.Now.Date;
+            TestDate = TestDate.AddYears(100);
+            string DateAdded = TestDate.ToString();
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void DateAddedInvaliddata()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string DateAdded = "this is not a date!";
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void OrderIdMinLessOne()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string OrderId = "";
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void OrderIdMin()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string OrderId = "a";
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void OrderIdMinPlusOne()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string OrderId = "aa";
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void OrderIdMaxLessOne()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string OrderId = "aaaaaa";
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void OrderIdMax()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string OrderId = "aaaa";
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void OrderIdMaxPlusOne()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string OrderId = "aaaaa";
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void OrderIdMid()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string OrderId = "aa";
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StaffIdMinLessOne()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string StaffId = "";
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StaffIdMin()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string StaffId = "a";
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StaffIdMinPlusOne()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string StaffId = "aa";
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StaffIdMaxLessOne()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string StaffId = "";
+            StaffId = StaffId.PadRight(4, 'a');
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StaffIdMax()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string StaffId = "";
+            StaffId = StaffId.PadRight(5, 'a');
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StaffIdMaxPlusOne()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string StaffId = "";
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StaffIdMid()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string StaffId = "";
+            StaffId = StaffId.PadRight(2, 'a');
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CommentsMinLessOne()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string Comments = "";
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CommentsMin()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string Comments = "a";
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CommentsMinPlusOne()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string Comments = "aa";
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CommentsMaxLessOne()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string Comments = "";
+            Comments = Comments.PadRight(49, 'a');
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CommentsMax()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string Comments = "";
+            Comments = Comments.PadRight(50, 'a');
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CommentsMaxPlusOne()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string Comments = "";
+            Comments = Comments.PadRight(51, 'a');
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CommentsMid()
+        {
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            String Error = "";
+            string Comments = "";
+            Comments = Comments.PadRight(25, 'a');
+            Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
+            Assert.AreEqual(Error, "");
+        }
+
+
+
+
+
 
 
     }
