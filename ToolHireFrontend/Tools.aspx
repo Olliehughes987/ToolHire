@@ -24,13 +24,14 @@
              &nbsp;</p>
          <p>
              &nbsp;</p>
-         <asp:Button ID="OK" runat="server" style="z-index: 1; left: 153px; top: 369px; position: absolute" Text="OK" OnClick="OK_Click" />
+         <asp:Button ID="OK" runat="server" style="z-index: 1; left: 154px; top: 413px; position: absolute" Text="OK" OnClick="OK_Click" />
          </div>
          <asp:Label ID="Label6" runat="server" style="z-index: 1; left: 29px; top: 205px; position: absolute; width: 38px; height: 19px;" Text="Cost"></asp:Label>
-         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 59px; top: 348px; position: absolute" Text="[lblError]"></asp:Label>
          <p>
          <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" style="z-index: 1; left: 379px; top: 173px; position: absolute" Text="Find" />
          </p>
+         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 62px; top: 380px; position: absolute" Text="[lblError]"></asp:Label>
+         <asp:CheckBox ID="chkActive" runat="server" style="z-index: 1; left: 31px; top: 344px; position: absolute" Text="Active" />
     </form>
 </body>
 </html>
