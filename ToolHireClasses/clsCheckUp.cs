@@ -144,23 +144,23 @@ namespace ToolHireClasses
             {
                 Error = Error + "Staff Id cant be blank : ";
             }
-            if (StaffId.Length > 6 )
+            if (StaffId.Length > 6)
             {
                 Error = Error + "The Staff Id must be less than 6 characters : ";
             }
-            if (Comments.Length ==0)
+            if (Comments.Length == 0)
             {
                 Error = Error + "The Comments cant be blank : ";
             }
             if (Comments.Length > 50)
             {
-                Error = Error + "Reached Comments Limit : "; 
+                Error = Error + "Reached Comments Limit : ";
             }
 
             return Error;
         }
 
-   
+
 
 
         public bool Find(int CheckUpId)
@@ -175,7 +175,7 @@ namespace ToolHireClasses
                 mOrderId = Convert.ToInt32(DB.DataTable.Rows[0]["OrderId"]); ;
                 mCheckUpNo = Convert.ToInt32(DB.DataTable.Rows[0]["CheckUpNo"]);
                 mCheckUpId = Convert.ToInt32(DB.DataTable.Rows[0]["CheckUpId"]); ;
-                mDateAdded = Convert.ToDateTime(DB.DataTable.Rows[0]["DateOfCheckup"]);
+                mDateAdded = Convert.ToDateTime(DB.DataTable.Rows[0]["DateAdded"]);
                 mComments = Convert.ToString(DB.DataTable.Rows[0]["Comments"]); ;
                 mToolReturn = Convert.ToBoolean(DB.DataTable.Rows[0]["ToolReturn"]);
 
@@ -188,7 +188,10 @@ namespace ToolHireClasses
 
                 return false;
         }
-}
 
 
     }
+}
+
+
+    

@@ -69,7 +69,7 @@ namespace ToolHireTests
             }
 
             [TestMethod]
-            public void DateOfCheckUpOK()
+            public void DateAddedOK()
             {
                 //create an instance of the class we want to create
                 clsCheckUp AnCheckUp = new clsCheckUp();
@@ -119,24 +119,24 @@ namespace ToolHireTests
             }
 
             [TestMethod]
-            public void TestStaffIdFound()
+        public void TestStaffIdFound()
+        {
+            //create an instance of the class we want to create
+            clsCheckUp AnCheckUp = new clsCheckUp();
+            Boolean Found = false;
+            Boolean OK = true;
+            Int32 CheckUpId = 12;
+            Found = AnCheckUp.Find(CheckUpId);
+            //test to see that the two values are the same
+            if (AnCheckUp.StaffId != 12)
             {
-                //create an instance of the class we want to create
-                clsCheckUp AnCheckUp = new clsCheckUp();
-                Boolean Found = false;
-                Boolean OK = true;
-                Int32 CheckUpId = 12;
-                Found = AnCheckUp.Find(CheckUpId);
-                //test to see that the two values are the same
-               if (AnCheckUp.StaffId != 12)
-                {
-                    OK = false;
-                }
-                    Assert.IsTrue(OK);
+                OK = false;
             }
+            Assert.IsTrue(OK);
+        }
 
 
-            [TestMethod]
+        [TestMethod]
             public void TestCheckUpIdFound()
             {
                 //create an instance of the class we want to create

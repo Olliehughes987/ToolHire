@@ -34,7 +34,9 @@ namespace ToolHireClasses
 
             }
         }
-        public object ThisCheckUp { get; set; }
+
+        public int ThisCheckUp { get; set; }
+
 
         public clsCheckUpCollection()
         {

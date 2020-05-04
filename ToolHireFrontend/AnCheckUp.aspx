@@ -21,7 +21,7 @@
             <br />
             Comments:<asp:TextBox ID="txtComments" runat="server" style="margin-left: 102px" Width="365px"></asp:TextBox>
             <br />
-            Date<asp:TextBox ID="txtDateAdded" runat="server" style="margin-left: 196px" Width="369px"></asp:TextBox>
+            DateAdded<asp:TextBox ID="txtDateAdded" runat="server" style="margin-left: 102px" Width="369px"></asp:TextBox>
             <br />
             <br />
             <asp:CheckBox ID="txtToolReturn" runat="server" Text="Tool Return?" />

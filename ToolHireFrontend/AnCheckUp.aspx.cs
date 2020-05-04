@@ -77,6 +77,7 @@ public partial class AnCheckUp : System.Web.UI.Page
         Found = AnCheckUp.Find(CheckUpId);
         if (Found == true)
         {
+            txtCheckUpId.Text = AnCheckUp.CheckUpId.ToString();
             txtCheckUpNo.Text = AnCheckUp.CheckUpNo.ToString();
             txtComments.Text = AnCheckUp.Comments;
             txtDateAdded.Text = AnCheckUp.DateAdded.ToString();

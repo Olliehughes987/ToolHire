@@ -39,23 +39,26 @@ namespace ToolHireTests
 
         }
 
-
-
         [TestMethod]
         public void ThisCheckUpOK()
         {
             clsCheckUpCollection AllCheckUp = new clsCheckUpCollection();
             clsCheckUp TestCheckUp = new clsCheckUp();
             TestCheckUp.ToolReturn = true;
-            TestCheckUp.CheckUpNo = 1;
             TestCheckUp.CheckUpId = 1;
+            TestCheckUp.CheckUpNo = 1;
             TestCheckUp.StaffId = 1;
             TestCheckUp.OrderId = 1;
             TestCheckUp.Comments = "some comment";
             TestCheckUp.DateAdded = DateTime.Now.Date;
             AllCheckUp.ThisCheckUp = TestCheckUp;
             Assert.AreEqual(AllCheckUp.ThisCheckUp, TestCheckUp);
-         }
+                
+        }
+
+
+
+
 
         [TestMethod]
         public void ListAndCountOK()
