@@ -10,10 +10,10 @@
     <form id="form1" runat="server">
         <div>
 
-            CheckUpId:<asp:TextBox ID="txtCheckUpId" runat="server" style="margin-left: 84px" Width="352px" OnTextChanged="txtStaffId_TextChanged"></asp:TextBox>
+            CheckUpId:<asp:TextBox ID="txtCheckUpId" runat="server" style="margin-left: 84px" Width="352px"></asp:TextBox>
             <asp:Button ID="BtnFind" runat="server" Text="Find" OnClick="BtnFind_Click" />
             <br />
-            StaffId:<asp:TextBox ID="txtStaffId" runat="server" style="margin-left: 147px" Width="352px" OnTextChanged="txtStaffId_TextChanged"></asp:TextBox>
+            StaffId:<asp:TextBox ID="txtStaffId" runat="server" style="margin-left: 147px" Width="352px"></asp:TextBox>
             <br />
             OrderId:<asp:TextBox ID="txtOrderId" runat="server" style="margin-left: 139px" Width="355px"></asp:TextBox>
             <br />
@@ -24,7 +24,7 @@
             DateAdded<asp:TextBox ID="txtDateAdded" runat="server" style="margin-left: 102px" Width="369px"></asp:TextBox>
             <br />
             <br />
-            <asp:CheckBox ID="txtToolReturn" runat="server" Text="Tool Return?" />
+            <asp:CheckBox ID="txtToolReturn" runat="server" ></asp:CheckBox>
             <br />
             <br />
             <asp:Label ID="lblError" runat="server"></asp:Label>

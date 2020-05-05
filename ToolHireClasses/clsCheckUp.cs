@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace ToolHireClasses
 {
     public class clsCheckUp
@@ -106,7 +107,7 @@ namespace ToolHireClasses
                 Error = Error + "The Comments cannot be blank: ";
             }
 
-            if (CheckUpNo.Length > 6)
+            if (CheckUpNo.Length > 4)
             {
                 Error = Error + "The Check Up No must be less than 6 characters : ";
             }

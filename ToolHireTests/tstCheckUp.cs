@@ -275,7 +275,7 @@ namespace ToolHireTests
         {
             clsCheckUp AnCheckUp = new clsCheckUp();
             String Error = "";
-            string CheckUpNo = "a";
+            string CheckUpNo = "1";
             Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
             Assert.AreEqual(Error, "");
         }
@@ -285,7 +285,7 @@ namespace ToolHireTests
         {
             clsCheckUp AnCheckUp = new clsCheckUp();
             String Error = "";
-            string CheckUpNo = "aa";
+            string CheckUpNo = "11";
             Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
             Assert.AreEqual(Error, "");
         }
@@ -295,7 +295,7 @@ namespace ToolHireTests
         {
             clsCheckUp AnCheckUp = new clsCheckUp();
             String Error = "";
-            string CheckUpNo = "aaaaa";
+            string CheckUpNo = "111";
             Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
             Assert.AreEqual(Error, "");
         }
@@ -305,7 +305,7 @@ namespace ToolHireTests
         {
             clsCheckUp AnCheckUp = new clsCheckUp();
             String Error = "";
-            string CheckUpNo = "aaaaaa";
+            string CheckUpNo = "111";
             Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
             Assert.AreEqual(Error, "");
         }
@@ -315,7 +315,7 @@ namespace ToolHireTests
         {
             clsCheckUp AnCheckUp = new clsCheckUp();
             String Error = "";
-            string CheckUpNo = "aaa";
+            string CheckUpNo = "11";
             Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
             Assert.AreEqual(Error, "");
         }
@@ -325,9 +325,9 @@ namespace ToolHireTests
         {
             clsCheckUp AnCheckUp = new clsCheckUp();
             String Error = "";
-            string CheckUpNo = "aaaaaaa";
+            string CheckUpNo = "1111";
             Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -431,7 +431,7 @@ namespace ToolHireTests
         {
             clsCheckUp AnCheckUp = new clsCheckUp();
             String Error = "";
-            string OrderId = "a";
+            string OrderId = "1";
             Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
             Assert.AreEqual(Error, "");
 
@@ -442,7 +442,7 @@ namespace ToolHireTests
         {
             clsCheckUp AnCheckUp = new clsCheckUp();
             String Error = "";
-            string OrderId = "aa";
+            string OrderId = "11";
             Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
             Assert.AreEqual(Error, "");
         }
@@ -452,7 +452,7 @@ namespace ToolHireTests
         {
             clsCheckUp AnCheckUp = new clsCheckUp();
             String Error = "";
-            string OrderId = "aaaaaa";
+            string OrderId = "111111";
             Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
             Assert.AreEqual(Error, "");
         }
@@ -462,7 +462,7 @@ namespace ToolHireTests
         {
             clsCheckUp AnCheckUp = new clsCheckUp();
             String Error = "";
-            string OrderId = "aaaa";
+            string OrderId = "1111";
             Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
             Assert.AreEqual(Error, "");
         }
@@ -472,7 +472,7 @@ namespace ToolHireTests
         {
             clsCheckUp AnCheckUp = new clsCheckUp();
             String Error = "";
-            string OrderId = "aaaaa";
+            string OrderId = "11111";
             Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
             Assert.AreEqual(Error, "");
         }
@@ -482,7 +482,7 @@ namespace ToolHireTests
         {
             clsCheckUp AnCheckUp = new clsCheckUp();
             String Error = "";
-            string OrderId = "aa";
+            string OrderId = "11";
             Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
             Assert.AreEqual(Error, "");
         }
@@ -502,7 +502,7 @@ namespace ToolHireTests
         {
             clsCheckUp AnCheckUp = new clsCheckUp();
             String Error = "";
-            string StaffId = "a";
+            string StaffId = "1";
             Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
             Assert.AreEqual(Error, "");
         }
@@ -512,7 +512,7 @@ namespace ToolHireTests
         {
             clsCheckUp AnCheckUp = new clsCheckUp();
             String Error = "";
-            string StaffId = "aa";
+            string StaffId = "11";
             Error = AnCheckUp.Valid(OrderId, StaffId, CheckUpNo, Comments, DateAdded);
             Assert.AreEqual(Error, "");
         }

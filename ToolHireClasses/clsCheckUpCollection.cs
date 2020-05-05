@@ -5,7 +5,9 @@ namespace ToolHireClasses
 {
     public class clsCheckUpCollection
     {
+        //private data members
         List<clsCheckUp> mCheckUpList = new List<clsCheckUp>();
+        clsCheckUp mThisCheckUp = new clsCheckUp();
 
         public List<clsCheckUp> CheckUpList
         {
@@ -35,9 +37,20 @@ namespace ToolHireClasses
             }
         }
 
-        public int ThisCheckUp { get; set; }
+        public clsCheckUp ThisCheckUp
+        {
+            get
+            {
+                return mThisCheckUp;
+            }
+            set
+            {
+                mThisCheckUp = value;
+            }
+        }
+      
 
-
+    
         public clsCheckUpCollection()
         {
             Int32 Index = 0;
@@ -62,8 +75,25 @@ namespace ToolHireClasses
         }
 
 
+        public int Add()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("CheckUpNo", mThisCheckUp.CheckUpNo);
+            DB.AddParameter("StaffId", mThisCheckUp.StaffId);
+            DB.AddParameter("OrderId", mThisCheckUp.OrderId);
+            DB.AddParameter("ToolReturn", mThisCheckUp.ToolReturn);
+            DB.AddParameter("Comments", mThisCheckUp.Comments);
+            DB.AddParameter("DateAdded", mThisCheckUp.DateAdded);
+            return DB.Execute("sproc_tblCheckUp_Insert");
 
+        }
 
+        public void Delete()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@CheckUpId", mThisCheckUp.CheckUpId);
+            DB.Execute("sproc_tblCheckUp_Delete");
+        }
 
     }
 }

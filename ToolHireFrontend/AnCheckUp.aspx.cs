@@ -29,13 +29,16 @@ public partial class AnCheckUp : System.Web.UI.Page
         {
             AnCheckUp.CheckUpId = Convert.ToInt32(txtCheckUpId.Text);
             AnCheckUp.StaffId = Convert.ToInt32(txtStaffId.Text);
-            AnCheckUp.OrderId = Convert.ToInt32(txtStaffId.Text);
-            AnCheckUp.CheckUpNo = Convert.ToInt32(txtStaffId.Text);
+            AnCheckUp.OrderId = Convert.ToInt32(txtOrderId.Text);
+            AnCheckUp.CheckUpNo = Convert.ToInt32(txtCheckUpNo.Text);
             AnCheckUp.ToolReturn = Convert.ToBoolean(txtToolReturn.Text);
             AnCheckUp.Comments = txtComments.Text;
             AnCheckUp.DateAdded = Convert.ToDateTime(txtDateAdded.Text);
-            Session["AnCheckUp"] = AnCheckUp;
-            Response.Write("CheckUpViewer.aspx");
+            clsCheckUpCollection CheckUpList = new clsCheckUpCollection();
+            CheckUpList.ThisCheckUp = AnCheckUp;
+            CheckUpList.Add();
+
+            Response.Redirect("CheckUpList.aspx");
         }
         else
         {
@@ -45,26 +48,10 @@ public partial class AnCheckUp : System.Web.UI.Page
 
 }
 
-    protected void txtToolReturn_SelectedIndexChanged(object sender, EventArgs e)
-    {
-
-    }
-
     protected void Btncancel_Click(object sender, EventArgs e)
     {
 
     }
-
-    protected void txtStaffId_TextChanged(object sender, EventArgs e)
-    {
-
-    }
-
-
-
-
-
-
 
 
 
