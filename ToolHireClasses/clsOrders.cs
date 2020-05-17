@@ -93,8 +93,59 @@ namespace ToolHireClasses
             {
                 return true;
             }
+        }
 
-            
+        public string Valid(string ClientID,
+                            string StaffID,
+                            DateTime DateAdded,
+                            string TotalCost)
+        {
+            DateTime DateTemp;
+            String Error = "";
+            if (ClientID.Length == 0) {
+                Error = Error + "The Client ID may not be blank : ";
+            }
+
+            if (ClientID.Length > 6) {
+                Error = Error + "The Client ID must be less than 6 characters : ";
+            }
+
+            if (StaffID.Length == 0)
+            {
+                Error = Error + "The Staff ID may not be blank : ";
+            }
+
+            if (StaffID.Length > 6)
+            {
+                Error = Error + "The Staff ID must be less than 6 characters : ";
+            }
+
+            if (TotalCost.Length == 0)
+            {
+                Error = Error + "The Total Cost may not be blank : ";
+            }
+
+            if (StaffID.Length > 6)
+            {
+                Error = Error + "The Total Cost must be less than 6 characters : ";
+            }
+
+            try
+            {
+                DateTemp = Convert.ToDateTime(DateAdded);
+                if (DateTemp < DateTime.Now.Date)
+                {
+                    Error = Error + "The date cannot be in the past : ";
+                }
+                if (DateTemp > DateTime.Now.Date)
+                {
+                    Error = Error + "The date cannot be in the future : ";
+                }
+            } catch {
+                Error = Error + "The date was not a valid date : ";
+            }
+
+            return Error;
         }
     }
 }

@@ -9,24 +9,59 @@ using ToolHireClasses;
 public partial class Orders : System.Web.UI.Page
 {
     Int32 OrderID;
+    Int32 StaffID;
+    Int32 ClientID;
+    Int32 TotalCost;
+    DateTime DateAdded;
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        clsOrders Orders = new clsOrders();
-        Orders = (clsOrders)Session["Orders"];
-        Response.Redirect("OrdersViewer.aspx");
+        if (IsPostBack == false) {
+            if (OrderID != -1) {
+                DisplayOrder();
+            }
+        }
+
     }
 
     protected void btnOK_Click(object sender, EventArgs e)
     {
-        clsOrders AnOrder = new clsOrders();
-        AnOrder.OrderID = Convert.ToInt32(TxtOrderID.Text);
+        string Error = "";
+        AnOrder.OrderID = OrderID;
         AnOrder.ClientID = Convert.ToInt32(TxtClientID.Text);
         AnOrder.DateAdded = Convert.ToDateTime(TxtOrderDate.Text);
         AnOrder.StaffID = Convert.ToInt32(TxtStaffID.Text);
         AnOrder.TotalCost = Convert.ToInt32(TxtTotalCost.Text);
-        Session["AnOrder"] = AnOrder;
-        Response.Redirect("Orders.aspx");
+        AnOrder.Active = Processed.Checked;
+
+        Error = AnOrder.Valid(Convert.ToString(ClientID), Convert.ToString(StaffID), DateAdded, Convert.ToString(TotalCost));
+        if (Error == "")
+        {
+            clsOrders AnOrder = new clsOrders();
+            AnOrder.OrderID = OrderID;
+            AnOrder.ClientID = Convert.ToInt32(TxtClientID.Text);
+            AnOrder.DateAdded = Convert.ToDateTime(TxtOrderDate.Text);
+            AnOrder.StaffID = Convert.ToInt32(TxtStaffID.Text);
+            AnOrder.TotalCost = Convert.ToInt32(TxtTotalCost.Text);
+            AnOrder.Active = Processed.Checked;
+            clsOrderCollection OrderList = new clsOrderCollection();
+            if (OrderID == -1)
+            {
+                OrderList.ThisOrder = AnOrder;
+                OrderList.Add();
+            }
+            else
+            {
+                OrderList.ThisOrder.Find(OrderID);
+                OrderList.ThisOrder = AnOrder;
+                OrderList.Update();
+            }
+        }
+        else
+        {
+            lblError.Text = Error;
+        }
+
     }
 
     protected void btnFind_Click(object sender, EventArgs e)
@@ -45,6 +80,16 @@ public partial class Orders : System.Web.UI.Page
             TxtTotalCost.Text = Convert.ToString(AnOrder.TotalCost);
 
         }
+    }
+
+    void DisplayAddress(){
+        clsOrderCollection OrderBook = new clsOrderCollection();
+        OrderBook.Text.ThisOrder.Find(OrderID);
+        TxtOrderID.Text = OrderBook.ThisOrder.OrderID.ToString();
+        TxtClientID.Text = OrderBook.ThisOrder.ClientID.ToString();
+        TxtStaffID.Text = OrderBook.ThisOrder.StaffID.ToString();
+        TxtOrderDate.Text = OrderBook.ThisOrder.DateAdded.ToString();
+        Processed.Checked = OrderBook.ThisOrder.Active;
 
     }
 }

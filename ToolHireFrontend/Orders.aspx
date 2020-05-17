@@ -29,6 +29,9 @@
             <br />
             <asp:Button ID="btnOK" runat="server" Height="44px" OnClick="btnOK_Click" Text="OK" Width="83px" />
             <asp:Button ID="btnCancel" runat="server" Height="46px" Text="Cancel" Width="117px" />
+            <br />
+            <br />
+            <asp:Label ID="lblError" runat="server"></asp:Label>
         </div>
     </form>
 </body>

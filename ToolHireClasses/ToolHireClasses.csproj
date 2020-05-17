@@ -44,6 +44,7 @@
     <Compile Include="clsCheckUp.cs" />
     <Compile Include="clsClient.cs" />
     <Compile Include="clsDataConnection.cs" />
+    <Compile Include="clsOrderCollection.cs" />
     <Compile Include="clsOrders.cs" />
     <Compile Include="clsStaff.cs" />
     <Compile Include="clsTools.cs" />
