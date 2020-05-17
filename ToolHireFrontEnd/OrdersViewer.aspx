@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="ToolHireFrontend2.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="OrdersViewer.aspx.cs" Inherits="OrdersViewer" %>
 
 <!DOCTYPE html>
 
@@ -10,7 +10,6 @@
     <form id="form1" runat="server">
         <div>
         </div>
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
     </form>
 </body>
 </html>

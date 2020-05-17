@@ -5,11 +5,10 @@ namespace ToolHireClasses
     public class clsOrders
     {
         private int mOrderID;
-
         private DateTime mDateAdded;
         private int mClientID;
         private int mStaffID;
-        private double mTotalCost;
+        private int mTotalCost;
         private bool mActive;
 
         public bool Active {
@@ -62,7 +61,7 @@ namespace ToolHireClasses
                 mStaffID = value;
             }
         }
-        public double TotalCost {
+        public int TotalCost {
             get
             {
                 return mTotalCost;
@@ -76,12 +75,26 @@ namespace ToolHireClasses
 
         public bool Find(int orderID)
         {
-            mOrderID = 1;
-            mClientID = 1;
-            mStaffID = 1;
-            mTotalCost = 15.00;
-            mDateAdded = Convert.ToDateTime("18/02/2020");
-            return true;
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@OrderId", OrderID);
+            DB.Execute("sproc_tblOrders_FilterByOrderID");
+
+            if (DB.Count == 1)
+            {
+                mOrderID = Convert.ToInt32(DB.DataTable.Rows[0]["OrderId"]);
+                mDateAdded = Convert.ToDateTime(DB.DataTable.Rows[0]["OrderDate"]);
+                mClientID = Convert.ToInt32(DB.DataTable.Rows[0]["ClientID"]);
+                mActive = Convert.ToBoolean(DB.DataTable.Rows[0]["Processed"]);
+                mTotalCost = Convert.ToInt32(DB.DataTable.Rows[0]["TotalCost"]);
+                mStaffID = Convert.ToInt32(DB.DataTable.Rows[0]["StaffID"]);
+                return true;
+            }
+            else
+            {
+                return true;
+            }
+
+            
         }
     }
 }

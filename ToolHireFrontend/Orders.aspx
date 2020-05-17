@@ -6,29 +6,30 @@
 <head runat="server">
     <title></title>
 </head>
-<body style="width: 253px; height: 192px">
+<body style="height: 921px; width: 763px">
     <form id="form1" runat="server">
-        <br />
-        <asp:Image ID="Image1" runat="server" Height="132px" ImageUrl="~/toolhire.png" Width="123px" />
-        <br />
-        <br />
-        OrderID&nbsp;
-        <asp:TextBox ID="TxtOrderID" runat="server" style="margin-left: 16px" Width="132px"></asp:TextBox>
-        <br />
-        ClientID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="TxtClientID" runat="server" Width="134px"></asp:TextBox>
-        <br />
-        StaffID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="TxtStaffID" runat="server" Width="134px"></asp:TextBox>
-        <br />
-        DateAdded
-        <asp:TextBox ID="TxtDateAdded" runat="server" Width="134px"></asp:TextBox>
-        <br />
-        TotalCost&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="TxtTotalCost" runat="server" Width="134px"></asp:TextBox>
-        <br />
-        <asp:CheckBox ID="Processed" runat="server" />
-        <br />
-        <asp:Button ID="OKButton" runat="server" Text="OK" Width="41px" />
-        <asp:Button ID="CancelButton" runat="server" Text="Cancel" style="margin-left: 18px" Width="59px" />
+        <div style="height: 917px; width: 764px">
+            OrderID&nbsp;
+            <asp:TextBox ID="TxtOrderID" runat="server"></asp:TextBox>
+            &nbsp;<asp:Button ID="btnFind" runat="server" Height="37px" OnClick="btnFind_Click" Text="Find" Width="84px" />
+            <br />
+            OrderDate
+            <asp:TextBox ID="TxtOrderDate" runat="server"></asp:TextBox>
+            <br />
+            ClientID
+            <asp:TextBox ID="TxtClientID" runat="server"></asp:TextBox>
+            <br />
+            StaffID
+            <asp:TextBox ID="TxtStaffID" runat="server"></asp:TextBox>
+            <br />
+            TotalCost
+            <asp:TextBox ID="TxtTotalCost" runat="server"></asp:TextBox>
+            <br />
+            <asp:CheckBox ID="Processed" runat="server" />
+            <br />
+            <asp:Button ID="btnOK" runat="server" Height="44px" OnClick="btnOK_Click" Text="OK" Width="83px" />
+            <asp:Button ID="btnCancel" runat="server" Height="46px" Text="Cancel" Width="117px" />
+        </div>
     </form>
-    </body>
+</body>
 </html>

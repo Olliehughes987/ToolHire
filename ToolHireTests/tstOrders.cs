@@ -7,6 +7,8 @@ namespace ToolHireTests
     [TestClass]
     public class tstOrders
     {
+        
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -69,7 +71,7 @@ namespace ToolHireTests
         public void TotalCostOK()
         {
             clsOrders AnOrder = new clsOrders();
-            Double TestTotalCost = 1.0;
+            Int32 TestTotalCost = 1;
             AnOrder.TotalCost = TestTotalCost;
             Assert.AreEqual(AnOrder.TotalCost, TestTotalCost);
         }
@@ -108,13 +110,14 @@ namespace ToolHireTests
             Boolean OK = true;
             Int32 OrderID = 1;
             Found = AnOrder.Find(OrderID);
-            if (AnOrder.DateAdded != Convert.ToDateTime("18/02/2020"))
+            if (AnOrder.DateAdded != Convert.ToDateTime("17/05/2020"))
             {
                 OK = false;
             }
             Assert.IsTrue(OK);
         }
 
+        [TestMethod]
         public void TestStaffIDFound()
         {
             clsOrders AnOrder = new clsOrders();
@@ -129,6 +132,7 @@ namespace ToolHireTests
             Assert.IsTrue(OK);
         }
 
+        [TestMethod]
         public void TestTotalCostFound()
         {
             clsOrders AnOrder = new clsOrders();
